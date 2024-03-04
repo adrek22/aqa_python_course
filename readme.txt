@@ -1,1 +1,1 @@
-My first git project related to the Automation QA Python Course
+The first my git project related to the Automation QA Python Course
