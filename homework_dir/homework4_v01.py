@@ -145,7 +145,7 @@ def task7():
                 continue  # Give the user another attempt
             else:  # Second attempt
                 print("You have no more tries left.")
-                return  # Exit the function after the final attempt
+                break  # Exit after the final attempt
 
         # Arithmetic operations if not division by zero
         match op:
