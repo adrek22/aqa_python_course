@@ -91,21 +91,17 @@ def task3():
     # Arithmetic operations
     match task3_user_input2_op:
         case '+':
-            result = num1 + num2
-            print_result(result)
+            print_result(num1 + num2)
         case '-':
-            result = num1 - num2
-            print_result(result)
+            print_result(num1 - num2)
         case '*':
-            result = num1 * num2
-            print_result(result)
+            print_result(num1 * num2)
         case '/':
             # Check for division by zero
             if num2 == 0:
                 print("Error: Cannot divide by zero.")
             else:
-                result = num1 / num2
-                print_result(result)
+                print_result(num1 / num2)
 
 
 # User to enter the task number
