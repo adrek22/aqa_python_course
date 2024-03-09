@@ -14,7 +14,7 @@ def get_number_or_q_input(prompt):
 
 
 def get_operation_or_q_input(prompt):
-    """Prompts the user for an operation or 'q' to quit."""
+    """Prompts the user for an operation or 'q' to quit, ensuring the valid operation is entered."""
     while True:
         user_input = input(prompt)
         if user_input.lower() == 'q':
