@@ -1,6 +1,11 @@
 """ Homework 5 """
 
 
+class NegativeNumberError(Exception):
+    """Exception raised for errors in the input if the number is negative."""
+    pass
+
+
 def get_number_or_q_input(prompt):
     """Prompts the user for a number or 'q' to quit, ensuring the input is converted to a float."""
     while True:
@@ -13,12 +18,10 @@ def get_number_or_q_input(prompt):
             print(f"{str(ve).capitalize()}. Please enter a valid number or 'q' to quit.")
 
 
-def get_operation_or_q_input(prompt):
+def get_operation_input(prompt):
     """Prompts the user for an operation or 'q' to quit, ensuring the valid operation is entered."""
     while True:
         user_input = input(prompt)
-        if user_input.lower() == 'q':
-            return 'q'  # Indicate the desire to exit
         # Handle operation input
         try:
             if user_input not in ['+', '-', '*', '/']:
@@ -30,20 +33,17 @@ def get_operation_or_q_input(prompt):
 
 
 def task1():
-    # Print intro
-    print('Task 1: Square Root Calculation with Negative Number Exception'.center(50))
-
     try:
         # Ask the user for a number
-        number = float(input("Enter a non-negative number: "))
+        number = float(input("Enter a number: "))
 
         # Check for positive input
         if number < 0:
-            raise Exception("Cannot calculate the square root of a negative number.")
+            raise NegativeNumberError("Cannot calculate the square root of a negative number.")
 
     # Handle the exception for negative inputs
-    except Exception as e:
-        print(e)
+    except NegativeNumberError as nne:
+        print(nne)
 
     # Calculate the square root if no exception was raised
     else:
@@ -57,26 +57,19 @@ def task1():
 
 
 def task2():
-    # Print intro
-    print('Task 2: Square Root Calculation with All Exceptions Handling'.center(50))
-
-    # User to enter a number
-    user_input = input("Enter a positive number: ")
-
-    # Input converting with exceptions handling
     try:
-        # Attempt to convert to a float
-        number = float(user_input)
+        # Ask the user for a number
+        number = float(input("Enter a number: "))
 
         # Check for negative input
         if number < 0:
-            raise Exception("Cannot calculate the square root of a negative number.")
+            raise NegativeNumberError("Cannot calculate the square root of a negative number.")
 
     # Handle the exception for not number and for negative inputs
     except ValueError as ve:
         print(f"{str(ve).capitalize()}. Please enter a valid number.")
-    except Exception as e:
-        print(e)
+    except NegativeNumberError as nne:
+        print(nne)
 
     # Calculate the square root if no exception was raised
     else:
@@ -90,10 +83,6 @@ def task2():
 
 
 def task3():
-    # Print intro
-    print('Task 3: Extended Basic Calculator with Exceptions Handling'.center(50))
-    print("Enter 'q' at any prompt to quit.")
-
     while True:
         # User to enter the 1st and 2nd number
         num1 = get_number_or_q_input("Enter the 1st number: ")
@@ -105,9 +94,7 @@ def task3():
             break  # Exit the loop if 'q' is entered
 
         # User to enter an operation
-        op = get_operation_or_q_input("Enter the operation (+, -, *, /): ")
-        if op == 'q':
-            break  # Exit the loop if 'q' is entered
+        op = get_operation_input("Enter the operation (+, -, *, /): ")
 
         try:
             # Arithmetic operations
@@ -143,8 +130,7 @@ def task3():
 
 
 # Main Flow. User to enter the task number
-task_number = input("Welcome to the Homework 5 presentation, featuring three distinct tasks."
-                    "\nPlease select a task to explore by entering its number (1, 2, or 3): ")
+task_number = input("Please select a task from 1 to 3: ")
 
 # Execute the corresponding task or notify the user of invalid input
 match task_number:

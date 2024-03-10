@@ -1,21 +1,23 @@
 """ Homework 5 """
 
 
-def task1():
-    # Print intro
-    print('Task 1: Square Root Calculation with Negative Number Exception'.center(50))
+class NegativeNumberError(Exception):
+    """Exception raised for errors in the input if the number is negative."""
+    pass
 
+
+def task1():
     try:
         # Ask the user for a number
-        number = float(input("Enter a non-negative number: "))
+        number = float(input("Enter a number: "))
 
         # Check for positive input
         if number < 0:
-            raise Exception("Cannot calculate the square root of a negative number.")
+            raise NegativeNumberError("Cannot calculate the square root of a negative number.")
 
     # Handle the exception for negative inputs
-    except Exception as e:
-        print(e)
+    except NegativeNumberError as nne:
+        print(nne)
 
     # Calculate the square root if no exception was raised
     else:
@@ -29,26 +31,19 @@ def task1():
 
 
 def task2():
-    # Print intro
-    print('Task 2: Square Root Calculation with All Exceptions Handling'.center(50))
-
-    # User to enter a number
-    user_input = input("Enter a positive number: ")
-
-    # Input converting with exceptions handling
     try:
-        # Attempt to convert to a float
-        number = float(user_input)
+        # Ask the user for a number
+        number = float(input("Enter a number: "))
 
         # Check for negative input
         if number < 0:
-            raise Exception("Cannot calculate the square root of a negative number.")
+            raise NegativeNumberError("Cannot calculate the square root of a negative number.")
 
     # Handle the exception for not number and for negative inputs
     except ValueError as ve:
         print(f"{str(ve).capitalize()}. Please enter a valid number.")
-    except Exception as e:
-        print(e)
+    except NegativeNumberError as nne:
+        print(nne)
 
     # Calculate the square root if no exception was raised
     else:
@@ -62,18 +57,12 @@ def task2():
 
 
 def task3():
-    # Print intro
-    print('Task 3: Extended Basic Calculator with Exceptions Handling'.center(50))
-    print("Enter 'q' at any prompt for number to quit.")
-
     while True:
         # User to enter the 1st and 2nd number
         user_input1 = input("Enter the 1st number: ")
         if user_input1.lower() == 'q':
             break  # Exit the loop and end the program
         user_input2 = input("Enter the 2nd number: ")
-        if user_input2.lower() == 'q':
-            break  # Exit the loop and end the program
 
         try:
             # Attempt to convert inputs to a float
@@ -112,15 +101,14 @@ def task3():
 
         # End of calculation
         finally:
-            print("Operation completed. You can continue or exit.")
+            print("Operation completed. You can continue or enter 'q' for the 1st prompt to quit.")
 
     # Exit from loop
     print("Calculator has been exited. Thank you for using the calculator!")
 
 
 # Main Flow. User to enter the task number
-task_number = input("Welcome to the Homework 5 presentation, featuring three distinct tasks."
-                    "\nPlease select a task to explore by entering its number (1, 2, or 3): ")
+task_number = input("Please select a task from 1 to 3: ")
 
 # Execute the corresponding task or notify the user of invalid input
 match task_number:
