@@ -65,10 +65,6 @@ def process_input(user_input: str):
         print(f"User is going to work with {data_type}.")
 
 
-def task3():
-    process_input(get_user_input())
-
-
 # Main Flow. User to enter the task number
 task_number = input("Please select a task from 1 to 3: ")
 
@@ -79,6 +75,6 @@ match task_number:
     case '2':
         task2()
     case '3':
-        task3()
+        process_input(get_user_input())
     case _:
         print("Invalid input. Please enter 1, 2, or 3.")
