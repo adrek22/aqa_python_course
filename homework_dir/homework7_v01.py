@@ -25,7 +25,7 @@ def task1():
     for index, (custom_item, built_in_item) in enumerate(zip(custom_map_results, built_in_map_results)):
         print(f"{index}: {custom_item} || {built_in_item}")
 
-    print("-" * 80)  # Separator for readabilitygit
+    print("-" * 80)  # Separator for readability
 
     # Function for filter
     is_str_or_int = lambda x: isinstance(x, str) or isinstance(x, int)
