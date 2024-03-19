@@ -26,8 +26,8 @@ def display_file_contents(file_path, filename, currency):
     print(f'{filename} file content with salary in {currency}:')
     with open(file_path) as file:
         print(file.read())
-    print('-' * 100)
 
 
 display_file_contents(source_file_path, source_file, "$")
+print('-' * 100)
 display_file_contents(result_file_path, result_file, "UAH")
