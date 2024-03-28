@@ -9,7 +9,7 @@ def time_decorator(func):
         result = func(*args, **kwargs)
         end = time.perf_counter()
         duration = end - start
-        print(f"{func.__name__} function is executed in {duration_text}.")
+        print(f"{func.__name__} function is executed in {duration}.")
         return result
     return wrapper
 
