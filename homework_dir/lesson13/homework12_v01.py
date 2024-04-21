@@ -145,7 +145,7 @@ class MyContextManager:
     A custom context manager to simplify opening and closing files within a specific folder.
     """
 
-    def __init__(self, filename: str, mode: str, directory='lesson13_test_folder'):
+    def __init__(self, filename: str, mode: str, directory='test_folder'):
         self.directory = Path(directory)
         self.filename = filename
         self.mode = mode

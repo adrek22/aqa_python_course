@@ -6,8 +6,8 @@ dir_name = os.path.dirname(__file__)
 # print(dir_name)
 
 file_source = 'test_file.csv'
-# file_path_source = dir_name + '/lesson8_test_folder/' + file_source
-file_path_source = os.path.join(dir_name, 'lesson8_test_folder', file_source)
+# file_path_source = dir_name + '/test_folder/' + file_source
+file_path_source = os.path.join(dir_name, 'test_folder', file_source)
 with open(file_path_source) as file_source_opened_r:
     file_source_data = file_source_opened_r.readlines()
     print(file_source_data)
@@ -15,8 +15,8 @@ with open(file_path_source) as file_source_opened_r:
 dollar_change_course = 39
 
 file_result = 'salaries_uah.csv'
-file_path_result = dir_name + '/lesson8_test_folder/' + file_result
-# file_path_result = os.path.join(dir_name, 'lesson8_test_folder', file_result)
+file_path_result = dir_name + '/test_folder/' + file_result
+# file_path_result = os.path.join(dir_name, 'test_folder', file_result)
 with open(file_path_result, 'w') as file_result_opened_w:
     for line in file_source_data:
         if line.startswith(','):

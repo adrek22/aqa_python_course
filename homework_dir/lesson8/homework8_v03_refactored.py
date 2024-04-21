@@ -5,8 +5,8 @@ import os
 dir_name = os.path.dirname(__file__)
 source_file = 'test_file.csv'
 result_file = 'salaries_uah.csv'
-source_file_path = os.path.join(dir_name, 'lesson8_test_folder', source_file)
-result_file_path = os.path.join(dir_name, 'lesson8_test_folder', result_file)
+source_file_path = os.path.join(dir_name, 'test_folder', source_file)
+result_file_path = os.path.join(dir_name, 'test_folder', result_file)
 exchange_rate_usd_to_uah = 39.16
 
 with open(source_file_path) as infile_r, open(result_file_path, 'w') as outfile_w:
