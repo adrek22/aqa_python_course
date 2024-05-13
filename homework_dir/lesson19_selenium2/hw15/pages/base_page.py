@@ -5,7 +5,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from homework_dir.lesson19_selenium2.hw15 import config
-from homework_dir.lesson19_selenium2.hw15.locators import locators
+from homework_dir.lesson19_selenium2.hw15.locators import a1_home_page
 
 
 class BasePage:
@@ -17,12 +17,12 @@ class BasePage:
 
     def __init__(self, driver: WebDriver):
         self.__driver = driver
-        self._wait_for_page_load()
-
-    def _wait_for_page_load(self):
-        """Wait for the page to be loaded based on page title availability."""
-        wait = WebDriverWait(self.driver, config.browser.timeout)
-        wait.until(ec.presence_of_element_located(locators.body_tag))
+    #     self._wait_for_page_load()
+    #
+    # def _wait_for_page_load(self):
+    #     """Wait for the page to be loaded based on page body availability."""
+    #     wait = WebDriverWait(self.driver, config.browser.timeout)
+    #     wait.until(ec.presence_of_element_located(a1_home_page.body_tag))
 
     @property
     def driver(self) -> WebDriver:
@@ -89,7 +89,7 @@ class BasePage:
         element = self._wait_for_element_and_scroll(locator)
         return element.get_attribute(attribute_name)
 
-    def count_elements(self, locator: tuple, expected_number: int):
+    def check_elements_number(self, locator: tuple, expected_number: int):
         """Counts the elements matched by the specified locator and compares with expected number"""
         self.wait_until(locator, ec.presence_of_all_elements_located)
         elements = self.driver.find_elements(locator)

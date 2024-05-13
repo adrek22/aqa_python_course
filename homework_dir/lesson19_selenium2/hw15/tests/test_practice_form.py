@@ -16,8 +16,8 @@ def test_home_page(driver):
 def test_forms_page(driver):
     """Verifies the behavior and visibility of elements on the Forms page."""
     home_page = HomePage(driver)
-    home_page.click_on_forms_btn()
-    forms_page = FormsPage(driver)
+    forms_page = home_page.click_on_forms_btn()
+    # forms_page = FormsPage(driver)
 
     # Verify visibility of elements
     assert forms_page.forms_top_text_is_displayed, "Top text should be visible on the Forms page."
@@ -53,10 +53,10 @@ def test_practice_form_page(driver):
 
     # Navigate from home page to the forms page and then to the practice form
     home_page = HomePage(driver)
-    home_page.click_on_forms_btn()
-    forms_page = FormsPage(driver)
-    forms_page.click_on_practice_form_in_list()
-    practice_form_page = PracticeFormPage(driver)
+    forms_page = home_page.click_on_forms_btn()
+    # forms_page = FormsPage(driver)
+    practice_form_page = forms_page.click_on_practice_form_in_list()
+    # practice_form_page = PracticeFormPage(driver)
 
     # Check visibility of elements on the form page
     assert practice_form_page.header_text_is_displayed, "Header text should be visible on the Practice Form page."
@@ -80,7 +80,7 @@ def test_practice_form_page(driver):
     # Fill the form and submit it
     practice_form_page.type_first_name('Mike')
     practice_form_page.type_last_name('Tyson')
-    practice_form_page.select_gender_radio_btn('male')
+    practice_form_page.select_gender_radio_btn(' mAle')
     practice_form_page.type_mobile_number('3105504000')
     practice_form_page.click_on_submit_btn()
 
