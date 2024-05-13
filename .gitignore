@@ -2,3 +2,5 @@
 venv
 aqa_course
 SHFP
+__pycache__/
+geckodriver.log
