@@ -104,13 +104,6 @@ class PracticeFormPage(BasePage):
         gender_index = gender_map.get(gender.lower().strip(), 1)
         locator = a3_practice_form_page.gender_radio_lbl(gender_index)
         self.click(locator)
-        # if gender.lower().strip() == 'male':
-        #     locator = a3_practice_form_page.male_gender_radio_lbl
-        # elif gender.lower().strip() == 'female':
-        #     locator = a3_practice_form_page.female_gender_radio_lbl
-        # else:
-        #     locator = a3_practice_form_page.other_gender_radio_lbl
-        # self.click(locator)
 
     def type_mobile_number(self, text):
         """Enters a mobile number into the 'Mobile Number' input field."""

@@ -1,8 +1,6 @@
 import pytest
 
 from homework_dir.lesson19_selenium2.hw15.pages.home_page import HomePage
-from homework_dir.lesson19_selenium2.hw15.pages.forms_page import FormsPage
-from homework_dir.lesson19_selenium2.hw15.pages.practice_form_page import PracticeFormPage
 
 
 def test_home_page(driver):
@@ -17,7 +15,6 @@ def test_forms_page(driver):
     """Verifies the behavior and visibility of elements on the Forms page."""
     home_page = HomePage(driver)
     forms_page = home_page.click_on_forms_btn()
-    # forms_page = FormsPage(driver)
 
     # Verify visibility of elements
     assert forms_page.forms_top_text_is_displayed, "Top text should be visible on the Forms page."
@@ -54,9 +51,7 @@ def test_practice_form_page(driver):
     # Navigate from home page to the forms page and then to the practice form
     home_page = HomePage(driver)
     forms_page = home_page.click_on_forms_btn()
-    # forms_page = FormsPage(driver)
     practice_form_page = forms_page.click_on_practice_form_in_list()
-    # practice_form_page = PracticeFormPage(driver)
 
     # Check visibility of elements on the form page
     assert practice_form_page.header_text_is_displayed, "Header text should be visible on the Practice Form page."
@@ -106,10 +101,8 @@ def test_practice_form_page(driver):
 # @pytest.mark.skip('Bug or wrong test')
 def test_button_color_changing_after_hovering(driver):
     home_page = HomePage(driver)
-    home_page.click_on_forms_btn()
-    forms_page = FormsPage(driver)
-    forms_page.click_on_practice_form_in_list()
-    practice_form_page = PracticeFormPage(driver)
+    forms_page = home_page.click_on_forms_btn()
+    practice_form_page = forms_page.click_on_practice_form_in_list()
 
     color_before_hover = practice_form_page.get_color_submit_btn
     practice_form_page.hover_over_submit_btn()
