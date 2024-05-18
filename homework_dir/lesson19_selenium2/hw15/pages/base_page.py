@@ -22,10 +22,10 @@ class BasePage(ABC):
         self.__driver = driver
         print('\nPage loaded:', self.title)
 
-    # Define title as a property and an abstract method
     @property
     @abstractmethod
     def title(self):
+        """Mandatory title attribute for child classes."""
         pass
 
     @property
@@ -38,9 +38,9 @@ class BasePage(ABC):
         """Provides access to ActionChains for performing complex user interactions."""
         return ActionChains(driver=self.driver)
 
-    def wait_until(self, locator: tuple, condition, poll_frequency=0.5, timeout: int = timeout) -> WebElement:
+    def wait_until(self, locator: tuple, condition, timeout: int = timeout, **kwargs) -> WebElement:
         """Wait for a certain condition to be true for an element before proceeding."""
-        wait = WebDriverWait(self.driver, timeout, poll_frequency=poll_frequency)
+        wait = WebDriverWait(self.driver, timeout, kwargs.get('poll_frequency', 0.5))
         return wait.until(condition(locator))
 
     def wait_until_not(self, locator: tuple, condition, timeout: int = timeout) -> WebElement:
@@ -53,14 +53,14 @@ class BasePage(ABC):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
         return element
 
-    def _wait_for_element_and_scroll(self, locator: tuple, poll_frequency=0.5) -> WebElement:
+    def _wait_for_element_and_scroll(self, locator: tuple, **kwargs) -> WebElement:
         """Waits for an element to be visible and scrolls it into view, then returns the WebElement."""
-        element = self.wait_until(locator, ec.visibility_of_element_located, poll_frequency)
+        element = self.wait_until(locator, ec.visibility_of_element_located, kwargs=kwargs.get('poll_frequency', 0.5))
         self.scroll_into_view(element)
         return element
 
     def is_element_displayed(self, locator: tuple) -> bool:
-        """Checks if an element is displayed and returns a boolean."""
+        """Checks if an element is visible on the web page and returns a boolean."""
         try:
             element = self.wait_until(locator, ec.visibility_of_element_located)
             return element.is_displayed()
@@ -68,7 +68,7 @@ class BasePage(ABC):
             return False
 
     def is_element_not_displayed(self, locator: tuple) -> bool:
-        """Checks if an element is displayed."""
+        """Checks if an element is not visible on the web page and returns a boolean."""
         try:
             self.wait_until_not(locator, ec.visibility_of_element_located)
             return True
@@ -127,7 +127,7 @@ class BasePage(ABC):
 
     @staticmethod
     def timestamp_as_identification():
-        now = datetime.now()  # current date and time
+        now = datetime.now()
         date_time = now.strftime("%Y%m%d%H%M%S")
         return date_time
 
@@ -150,6 +150,8 @@ class BasePage(ABC):
 
     @staticmethod
     def soft_assert(field_checks):
+        """Performs soft assertions on a collection of conditions
+        and accumulates errors without stopping the test execution."""
         errors = []
         for description, (condition_method, error_message) in field_checks.items():
             result = condition_method
@@ -158,7 +160,6 @@ class BasePage(ABC):
             else:
                 print(f"Assertion passed: {description}")
 
-        # Raise an exception if any errors were collected
         if errors:
             error_messages = "\n".join(errors)
             raise AssertionError(f"Encountered errors in form validation:\n{error_messages}")
