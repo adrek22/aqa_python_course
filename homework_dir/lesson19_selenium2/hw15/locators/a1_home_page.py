@@ -11,4 +11,4 @@ body_tag = by('tag=body')  # needed as locator to wait for page to load
 
 home_btn = by('link_text=https://demoqa.com')
 header_img = by('//img[@src="/images/Toolsqa.jpg"]')
-forms_section_btn = by('contain_text=Forms')
+forms_section_btn = by('text=Forms')

@@ -22,6 +22,8 @@ def by(locator: str) -> tuple:
         return By.ID, locator[3:]
     elif locator.startswith('class='):
         return By.CLASS_NAME, locator[6:]
+    elif locator.startswith('text='):
+        return By.XPATH, f"//*[text()='{locator[5:]}']"
     elif locator.startswith('contain_text='):
         return By.XPATH, f"//*[contains(text(), '{locator[13:]}')]"
     elif locator.startswith('link_text='):
