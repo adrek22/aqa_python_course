@@ -103,31 +103,31 @@ class BasePage(ABC):
         element = self.wait_until(locator, ec.presence_of_element_located)
         return element.value_of_css_property(css_property)
 
-    def get_element_by_attribute(self, locator: tuple, attribute_name: str):
+    def get_element_by_attribute(self, locator: tuple, attribute_name: str) -> str:
         """Get an attribute value of an element."""
         element = self._wait_for_element_and_scroll(locator)
         return element.get_attribute(attribute_name)
 
-    def get_element_text(self, locator: tuple):
+    def get_element_text(self, locator: tuple) -> str:
         """Get the visible text of an element."""
         element = self._wait_for_element_and_scroll(locator)
         return element.text
 
-    def check_elements_number(self, locator: tuple, expected_number: int):
+    def check_elements_number(self, locator: tuple, expected_number: int) -> bool:
         """Counts the elements matched by the specified locator and compares with expected number"""
         self.wait_until(locator, ec.presence_of_all_elements_located)
         elements = self.driver.find_elements(locator)
         actual_number = len(elements)
         return actual_number == expected_number
 
-    def check_element_attribute(self, locator: tuple, attribute_name: str, expected_value: str):
+    def check_element_attribute(self, locator: tuple, attribute_name: str, expected_value: str) -> bool:
         """Verifies that value of a specified attribute of a specified element matches the expected value."""
         element = self._wait_for_element_and_scroll(locator)
         actual_value = element.get_attribute(attribute_name)
         return actual_value == expected_value
 
     @staticmethod
-    def timestamp_as_identification():
+    def timestamp_as_identification() -> str:
         now = datetime.now()
         date_time = now.strftime("%Y%m%d%H%M%S")
         return date_time
