@@ -77,7 +77,8 @@ class BasePage(ABC):
 
     def click(self, locator: tuple):
         """Click on an element identified by a locator after ensuring it is clickable and in view."""
-        element = self._wait_for_element_and_scroll(locator)
+        element = self.wait_until(locator, ec.element_to_be_clickable)
+        self.scroll_into_view(element)
         element_text = self.get_element_text(locator)
         element.click()
         print(f'Web element with "{element_text}" text is clicked')
