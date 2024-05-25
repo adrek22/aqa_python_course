@@ -7,6 +7,8 @@ class PracticeFormPage(BasePage):
     """
     Represents the Practice Form page functionalities, providing methods to interact with the form's elements.
     """
+    title = "Practice Form"
+
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
 
@@ -140,3 +142,82 @@ class PracticeFormPage(BasePage):
     def click_on_dialog_close_btn(self):
         """Clicks the close button on the dialog that appears after form submission."""
         self.click(a3_practice_form_page.dialog_close_btn)
+
+
+class PracticeFormPageHandler(PracticeFormPage):
+    """
+    Handlers use predefined methods from Page. Methods indicate verbs. e.g. login(), type_password(), send_feedback()
+    """
+    def assert_practice_form(self):
+        """
+        Performs a comprehensive check of visible elements, label texts,
+        and placeholder texts on the Practice Form page.
+        """
+        color_before_hover = self.get_color_submit_btn()
+        self.hover_over_submit_btn()
+        color_after_hover = self.get_color_submit_btn()
+        field_checks1 = {
+            f'Submit button color is changed from {color_before_hover} to {color_after_hover}': (
+                color_after_hover != color_before_hover,
+                f"Submit button color should change on hover. Before: {color_before_hover}, After: {color_after_hover}")
+        }
+        field_checks2 = {
+            'Header text is visible': (self.header_text_is_displayed, "Header text should be visible on the Practice Form page."),
+            'Form title is visible': (self.form_title_is_displayed, "Form title should be visible."),
+            'Name label is visible': (self.name_label_is_displayed, "Name label should be visible."),
+            'Gender label is visible': (self.gender_label_is_displayed, "Gender label should be visible."),
+            'Mobile number label is visible': (self.mobile_label_is_displayed, "Mobile number label should be visible."),
+            'Submit button is visible': (self.submit_btn_is_displayed, "Submit button should be visible."),
+            'Name label text matches expected': (self.name_label_text_check, "Name label text does not match expected text."),
+            'Gender label text matches expected': (self.gender_label_text_check, "Gender label text does not match expected text."),
+            'Mobile number label text matches expected': (self.mobile_label_text_check, "Mobile number label text does not match expected text."),
+            'Submit button text matches expected': (self.submit_btn_text_check, "Submit button text does not match expected text."),
+            'First Name placeholder text matches expected': (self.first_name_placeholder_check, "Placeholder's text of First Name field does not match expected text."),
+            'Last Name placeholder text matches expected': (self.last_name_placeholder_check, "Placeholder's text of Last Name field does not match expected text."),
+            'Mobile Number placeholder text matches expected': (self.mobile_number_placeholder_check, "Placeholder's text of Mobile Number field does not match expected text.")
+        }
+        self.soft_assert(field_checks1)
+        self.soft_assert(field_checks2)
+
+    def fill_out_form_and_submit(self, first_name, last_name, gender, mobile):
+        """Fill the form and submit it"""
+        self.type_first_name(first_name)
+        self.type_last_name(last_name)
+        self.select_gender_radio_btn(gender)
+        self.type_mobile_number(mobile)
+        self.click_on_submit_btn()
+
+    def assert_summary_dialog(self, student_name, gender, mobile):
+        """Validate the summary dialog post submission and check values in the summary dialog"""
+        field_checks = {
+            'Header text is visible': (self.summary_dialog_is_displayed, "Summary label should be visible after the form submitting."),
+            'Form title is visible': (self.dialog_title_is_displayed, "Dialog title should be visible."),
+            'Name label is visible': (self.dialog_table_is_displayed, "Dialog table should be visible."),
+            'Gender label is visible': (self.dialog_close_btn_is_displayed, "Close button in dialog should be visible."),
+            'Mobile number label is visible': (self.table_student_name_label_check, "Student Name table label does not match expected text."),
+            'Submit button is visible': (self.table_gender_label_check, "Gender table label does not match expected text."),
+            'Name label text matches expected': (self.table_mobile_label_check, "Mobile table label does not match expected text."),
+            f'Gender label text matches expected: {student_name}': (
+                self.table_student_name_value_get() == student_name,
+                f"Student Name table value does not match. "
+                f"Expected: {student_name}, Found: {self.table_student_name_value_get()}"),
+            f'Mobile number label text matches expected: {gender}': (
+                self.table_gender_value_get() == gender,
+                f"Gender table value does not match. "
+                f"Expected: {gender}, Found: {self.table_gender_value_get()}"),
+            f'Submit button text matches expected: {mobile}':
+                (self.table_mobile_value_get() == mobile,
+                 f"Mobile table value does not match. "
+                 f"Expected: {mobile}, Found: {self.table_mobile_value_get()}")
+        }
+        print("\nSummary dialog is opened")
+        self.soft_assert(field_checks)
+
+    def close_summary_dialog(self):
+        self.click_on_dialog_close_btn()
+
+
+
+
+
+

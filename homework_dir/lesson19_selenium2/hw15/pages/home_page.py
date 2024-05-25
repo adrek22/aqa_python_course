@@ -1,7 +1,6 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from homework_dir.lesson19_selenium2.hw15.locators import a1_home_page
 from homework_dir.lesson19_selenium2.hw15.pages.base_page import BasePage
-from homework_dir.lesson19_selenium2.hw15.pages.forms_page import FormsPage
 
 
 class HomePage(BasePage):
@@ -9,6 +8,8 @@ class HomePage(BasePage):
     Represents the homepage of the website with methods that encapsulate the
     functionalities available on this page.
     """
+    title = "Home"
+
     def __init__(self, driver: WebDriver):
         super().__init__(driver)
 
@@ -27,4 +28,20 @@ class HomePage(BasePage):
     def click_on_forms_btn(self):
         """Is used to navigate from the homepage to the Forms section of the site."""
         self.click(a1_home_page.forms_section_btn)
-        return FormsPage(self.driver)
+
+
+class HomePageHandler(HomePage):
+    """
+    Handlers use predefined methods from Page. Methods indicate verbs. e.g. login(), type_password(), send_feedback()
+    """
+    def assert_home_page(self):
+        field_checks = {
+            'Home button is visible': (self.home_btn_is_displayed, "Home button should be visible on the page."),
+            'Header image is visible': (self.header_img_is_displayed, "Header image should be visible on the page."),
+            'Forms section button is visible': (self.forms_btn_is_displayed, "Forms section button should be visible on the page.")
+        }
+
+        self.soft_assert(field_checks)
+
+    def open_forms_page(self):
+        self.click_on_forms_btn()
