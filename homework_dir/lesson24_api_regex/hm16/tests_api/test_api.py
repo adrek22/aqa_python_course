@@ -31,7 +31,6 @@ def test_add_new_pet(random_pet_id, clean_up_pet):
     response = pet_api.create_pet(payload=payload)
     response_json = response.json()
     actual_id = response_json['id']
-    assert response.status_code == 200, f"Failed to create pet: {response.text}"
     assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
     assert actual_id == random_pet_id, f"Expected id: {random_pet_id}, actual {actual_id}"
     validate_schema(response.json(), schemas.ADD_PET)
@@ -96,7 +95,6 @@ def test_update_existing_pet(random_pet_id, add_pet, clean_up_pet):
     response = pet_api.update_pet(payload=payload)
     response_json = response.json()
     actual_id = response_json['id']
-    assert response.status_code == 200, f"Failed to update pet: {response.text}"
     assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
     assert actual_id == random_pet_id, f"Expected id: {random_pet_id}, actual {actual_id}"
     validate_schema(response.json(), schemas.ADD_PET)
@@ -139,7 +137,6 @@ def test_find_pet_by_id(add_pet, clean_up_pet):
     response = pet_api.find_pet_by_id(pet_id=created_id)
     response_json = response.json()
     actual_id = response_json['id']
-    assert response.status_code == 200, f"Failed to find pet: {response.text}"
     assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
     assert actual_id == created_id, f"Expected id: {created_id}, actual {actual_id}"
     validate_schema(response.json(), schemas.GET_PET)
@@ -151,7 +148,6 @@ def test_delete_pet(add_pet):
     response = pet_api.delete_pet(pet_id=created_id)
     response_json = response.json()
     deletion_message = response_json['message']
-    assert response.status_code == 200, f"Failed to delete  pet: {response.text}"
     assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
     assert deletion_message == str(created_id), f"Expected deletion message to be {created_id} but got {deletion_message}"
     validate_schema(response.json(), schemas.DELETE_PET)
@@ -163,12 +159,10 @@ def test_find_deleted_pet(add_pet):
     pet_api.delete_pet(pet_id=created_id)
     response = pet_api.find_pet_by_id(pet_id=created_id, negative_flow=True)
     response_json = response.json()
-    not_found_type = response_json['type']
-    not_found_message = response_json['message']
     assert response.status_code == 404, f"Expected 404 status for deleted pet but got {response.status_code}"
     assert response.reason == 'Not Found', f"Expected reason: OK, actual {response.reason}"
-    assert not_found_type == 'error', f"Expected type: error, actual: {not_found_type}"
-    assert not_found_message == 'Pet not found', f"Expected message: Pet not found, actual: {not_found_message}"
+    assert response_json['type'] == 'error', f"Expected type: error, actual: {response_json['type']}"
+    assert response_json['message'] == 'Pet not found', f"Expected message: Pet not found, actual: {response_json['message']}"
     validate_schema(response.json(), schemas.ERROR)
 
 
