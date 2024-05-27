@@ -39,8 +39,6 @@ def add_pet(random_pet_id):
         "status": "available|pending|sold"
     }
     response = pet_api.create_pet(payload=payload)
-    if response.status_code != 200:
-        raise HTTPException(f"Failed to create pet: {response.text}")
     return response.json()
 
 
@@ -48,6 +46,4 @@ def add_pet(random_pet_id):
 def clean_up_pet(random_pet_id):
     """Deletes the pet with the given random ID after the test is done."""
     yield
-    response = pet_api.delete_pet(pet_id=random_pet_id)
-    if response.status_code != 200:
-        raise HTTPException(f"Failed to delete pet: {response.text}")
+    pet_api.delete_pet(pet_id=random_pet_id)

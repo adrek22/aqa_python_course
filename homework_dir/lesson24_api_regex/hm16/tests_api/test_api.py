@@ -30,9 +30,8 @@ def test_add_new_pet(random_pet_id, clean_up_pet):
     }
     response = pet_api.create_pet(payload=payload)
     response_json = response.json()
-    actual_id = response_json['id']
     assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
-    assert actual_id == random_pet_id, f"Expected id: {random_pet_id}, actual {actual_id}"
+    assert response_json['id'] == random_pet_id, f"Expected id: {random_pet_id}, actual {response_json['id']}"
     validate_schema(response.json(), schemas.ADD_PET)
 
 
@@ -94,9 +93,8 @@ def test_update_existing_pet(random_pet_id, add_pet, clean_up_pet):
     }
     response = pet_api.update_pet(payload=payload)
     response_json = response.json()
-    actual_id = response_json['id']
     assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
-    assert actual_id == random_pet_id, f"Expected id: {random_pet_id}, actual {actual_id}"
+    assert response_json['id'] == random_pet_id, f"Expected id: {random_pet_id}, actual {response_json['id']}"
     validate_schema(response.json(), schemas.ADD_PET)
 
 
@@ -136,9 +134,8 @@ def test_find_pet_by_id(add_pet, clean_up_pet):
     created_id = add_pet['id']
     response = pet_api.find_pet_by_id(pet_id=created_id)
     response_json = response.json()
-    actual_id = response_json['id']
     assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
-    assert actual_id == created_id, f"Expected id: {created_id}, actual {actual_id}"
+    assert response_json['id'] == created_id, f"Expected id: {created_id}, actual {response_json['id']}"
     validate_schema(response.json(), schemas.GET_PET)
 
 
@@ -147,9 +144,8 @@ def test_delete_pet(add_pet):
     created_id = add_pet['id']
     response = pet_api.delete_pet(pet_id=created_id)
     response_json = response.json()
-    deletion_message = response_json['message']
     assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
-    assert deletion_message == str(created_id), f"Expected deletion message to be {created_id} but got {deletion_message}"
+    assert response_json['message'] == str(created_id), f"Expected deletion message to be {created_id} but got {response_json['message']}"
     validate_schema(response.json(), schemas.DELETE_PET)
 
 
