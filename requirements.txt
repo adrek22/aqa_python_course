@@ -2,3 +2,6 @@ requests==2.31.0
 pytest==8.1.1
 selenium==4.19.0
 pydantic-settings==2.2.1
+pandas~=2.2.1
+pydantic~=2.7.1
+jsonschema~=4.22.0
