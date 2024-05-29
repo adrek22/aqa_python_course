@@ -1,10 +1,21 @@
+import allure
 from homework_dir.lesson24_api_regex.hm16.backend import schemas
 from homework_dir.lesson24_api_regex.hm16.backend.pets_interface import pet_api
 from homework_dir.lesson24_api_regex.hm16.backend.schema_validation import validate_schema
 
 
+@allure.title("Add a new pet")
+@allure.description("Test adding a new pet and validate the response against the schema.")
+@allure.tag("API", "Pets")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("assignee", "Mykhailo")
+@allure.link("https://petstore.swagger.io/", name="API Documentation")
+@allure.testcase("API-101")
+@allure.parent_suite("API Tests")
+@allure.suite("Pets API")
+@allure.sub_suite("Create Pet")
+@allure.feature("Add Pet")
 def test_add_new_pet(random_pet_id, clean_up_pet):
-    """Test adding a new pet and validate the response against the schema."""
     payload = {
         "id": random_pet_id,
         "category": {
@@ -28,15 +39,28 @@ def test_add_new_pet(random_pet_id, clean_up_pet):
         ],
         "status": "available"
     }
-    response = pet_api.create_pet(payload=payload)
+    with allure.step("Step 1. Create pet with payload"):
+        response = pet_api.create_pet(payload=payload)
     response_json = response.json()
-    assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
-    assert response_json['id'] == random_pet_id, f"Expected id: {random_pet_id}, actual {response_json['id']}"
-    validate_schema(response.json(), schemas.ADD_PET)
+    with allure.step("Step 2. Assert response reason"):
+        assert response.reason == 'OK', f"Expected reason: OK, actual {response.reason}"
+    with allure.step("Step 3. Assert id in response"):
+        assert response_json['id'] == random_pet_id, f"Expected id: {random_pet_id}, actual {response_json['id']}"
+    with allure.step("Step 4. Validate response against schema"):
+        validate_schema(response.json(), schemas.ADD_PET)
 
 
+@allure.title("Create a pet with invalid input")
+@allure.description("Test creating a pet with invalid input and validate the response against the error schema.")
+@allure.tag("API", "Pets", "Negative")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.label("assignee", "Mykhailo")
+@allure.testcase("API-102")
+@allure.parent_suite("API Tests")
+@allure.suite("Pets API")
+@allure.sub_suite("Create Pet")
+@allure.feature("Create Pet with Invalid Input")
 def test_create_pet_with_invalid_input():
-    """Test adding a new pet with invalid input and validate the response."""
     payload = {
         "id": "a1",  # invalid type
         "category": {
@@ -66,8 +90,18 @@ def test_create_pet_with_invalid_input():
     validate_schema(response.json(), schemas.ERROR)
 
 
+@allure.title("Update an existing pet")
+@allure.description("Test updating an existing pet and validate the response against the schema.")
+@allure.tag("API", "Pets")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("assignee", "Mykhailo")
+@allure.link("https://petstore.swagger.io/", name="API Documentation")
+@allure.testcase("API-103")
+@allure.parent_suite("API Tests")
+@allure.suite("Pets API")
+@allure.sub_suite("Update Pet")
+@allure.feature("Update Pet")
 def test_update_existing_pet(random_pet_id, add_pet, clean_up_pet):
-    """Test updating an existing pet and validate the response against the schema."""
     payload = {
         "id": random_pet_id,
         "category": {
@@ -98,8 +132,17 @@ def test_update_existing_pet(random_pet_id, add_pet, clean_up_pet):
     validate_schema(response.json(), schemas.ADD_PET)
 
 
+@allure.title("Update pet with invalid ID")
+@allure.description("Test updating a pet with an invalid ID and validate the response against the error schema.")
+@allure.tag("API", "Pets", "Negative")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.label("assignee", "Mykhailo")
+@allure.testcase("API-104")
+@allure.parent_suite("API Tests")
+@allure.suite("Pets API")
+@allure.sub_suite("Update Pet")
+@allure.feature("Update Pet with Invalid ID")
 def test_update_pet_with_invalid_id(add_pet, clean_up_pet):
-    """Test updating an existing pet with invalid id and validate the response."""
     payload = {
         "id": 1234567890,  # invalid id
         "category": {
@@ -129,8 +172,18 @@ def test_update_pet_with_invalid_id(add_pet, clean_up_pet):
     validate_schema(response.json(), schemas.ERROR)
 
 
+@allure.title("Find a pet by ID")
+@allure.description("Test finding a pet by ID and validate the response against the schema.")
+@allure.tag("API", "Pets")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("assignee", "Mykhailo")
+@allure.link("https://petstore.swagger.io/", name="API Documentation")
+@allure.testcase("API-105")
+@allure.parent_suite("API Tests")
+@allure.suite("Pets API")
+@allure.sub_suite("Find Pet")
+@allure.feature("Find Pet")
 def test_find_pet_by_id(add_pet, clean_up_pet):
-    """Test finding a pet by ID and validate the response against the schema."""
     created_id = add_pet['id']
     response = pet_api.find_pet_by_id(pet_id=created_id)
     response_json = response.json()
@@ -139,8 +192,18 @@ def test_find_pet_by_id(add_pet, clean_up_pet):
     validate_schema(response.json(), schemas.GET_PET)
 
 
+@allure.title("Delete a pet")
+@allure.description("Test deleting a pet and validate the response against the schema.")
+@allure.tag("API", "Pets")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("assignee", "Mykhailo")
+@allure.link("https://petstore.swagger.io/", name="API Documentation")
+@allure.testcase("API-106")
+@allure.parent_suite("API Tests")
+@allure.suite("Pets API")
+@allure.sub_suite("Delete Pet")
+@allure.feature("Delete Pet")
 def test_delete_pet(add_pet):
-    """Test deleting a pet and validate the response against the schema."""
     created_id = add_pet['id']
     response = pet_api.delete_pet(pet_id=created_id)
     response_json = response.json()
@@ -149,8 +212,18 @@ def test_delete_pet(add_pet):
     validate_schema(response.json(), schemas.DELETE_PET)
 
 
+@allure.title("Find a deleted pet")
+@allure.description("Test finding a deleted pet and expect a 404 status code.")
+@allure.tag("API", "Pets", "Negative")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.label("assignee", "Mykhailo")
+@allure.link("https://petstore.swagger.io/", name="API Documentation")
+@allure.testcase("API-107")
+@allure.parent_suite("API Tests")
+@allure.suite("Pets API")
+@allure.sub_suite("Find Pet")
+@allure.feature("Find Deleted Pet")
 def test_find_deleted_pet(add_pet):
-    """Test finding a deleted pet and expect a 404 status code."""
     created_id = add_pet['id']
     pet_api.delete_pet(pet_id=created_id)
     response = pet_api.find_pet_by_id(pet_id=created_id, negative_flow=True)
@@ -162,8 +235,17 @@ def test_find_deleted_pet(add_pet):
     validate_schema(response.json(), schemas.ERROR)
 
 
+@allure.title("Pet not found for deleting")
+@allure.description("Test attempting to delete a non-existent pet and validate the response against the error schema.")
+@allure.tag("API", "Pets", "Negative")
+@allure.severity(allure.severity_level.NORMAL)
+@allure.label("assignee", "Mykhailo")
+@allure.testcase("API-108")
+@allure.parent_suite("API Tests")
+@allure.suite("Pets API")
+@allure.sub_suite("Delete Pet")
+@allure.feature("Delete Non-existent Pet")
 def test_pet_not_found_for_deleting(add_pet, clean_up_pet):
-    """Test deleting a pet that is not found and validate the response against the schema."""
     response = pet_api.delete_pet(pet_id=add_pet['id']+1, negative_flow=True)
     assert response.status_code == 404, f"Failed to delete pet: {response.text}"
     assert response.reason == 'Not Found', f"Expected reason: OK, actual {response.reason}"

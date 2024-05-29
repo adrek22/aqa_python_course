@@ -1,3 +1,5 @@
+import allure
+
 from homework_dir.lesson24_api_regex.hm16.backend.api_interface import APIInterface
 
 
@@ -5,7 +7,8 @@ class PetsInterface(APIInterface):
     """Interface for interacting with the Pets section of the API."""
     def create_pet(self, payload: dict, **kwargs):
         """Create a new pet record."""
-        return self._post('pet', json=payload, **kwargs)
+        with allure.step("Create pet with a payload"):
+            return self._post('pet', json=payload, **kwargs)
 
     def update_pet(self, payload: dict, **kwargs):
         """Update an existing pet record."""
