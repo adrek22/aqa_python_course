@@ -1,5 +1,0 @@
-
-Generated Random Pet ID: 246
-_post is executed successfully
-_put is executed successfully
-_delete is executed successfully

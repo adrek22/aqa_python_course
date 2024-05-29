@@ -1,4 +1,0 @@
-
-Generated Random Pet ID: 533
-_post is executed successfully
-_delete is executed successfully
