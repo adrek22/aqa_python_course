@@ -1,4 +1,5 @@
 import os
+import allure
 import pytest
 
 from homework_dir.lesson19_selenium2.hw15.pages.home_page import HomePageHandler, HomePage
@@ -7,6 +8,14 @@ from homework_dir.lesson19_selenium2.hw15.pages.practice_form_page import Practi
 from homework_dir.lesson19_selenium2.hw15.tests.test_data.test_data import select_random_data
 
 
+@allure.title("Flow testing")
+@allure.description("Verifies the flow from Home page to Practice Form page.")
+@allure.tag("Home page", "Forms  page", "Practice Form page")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.parent_suite("UI Tests")
+@allure.suite("Demo website")
+@allure.sub_suite("Practice Form page")
+@allure.feature("Practice Form page testing")
 def test_flow(driver):
     """Verifies the flow."""
     with HomePageHandler(driver) as handler1:
@@ -29,7 +38,7 @@ def test_flow(driver):
         gender = random_row['Gender']
         mobile_number = random_row['Mobile Number']
         handler3.fill_out_form_and_submit(first_name=first_name, last_name=last_name, gender=gender, mobile=mobile_number)
-        handler3.assert_summary_dialog(student_name=first_name+' '+last_name, gender=gender.capitalize(), mobile=mobile_number)
+        handler3.assert_summary_dialog(student_name=first_name+'123 '+last_name, gender=gender.capitalize(), mobile=mobile_number)
         # handler3.screenshot()
         handler3.close_summary_dialog()
 
