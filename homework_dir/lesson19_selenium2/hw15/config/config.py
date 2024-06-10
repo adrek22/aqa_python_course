@@ -19,4 +19,6 @@ class BrowserConfig(BaseConfig):
     base_url: str
     page_title: str
     timeout: int
-
+    region: str
+    app_version: str
+    db_type: str

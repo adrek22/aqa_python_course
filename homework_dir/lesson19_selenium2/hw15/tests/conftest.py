@@ -1,9 +1,13 @@
+import logging
 import allure
 import pytest
 from homework_dir.lesson19_selenium2.hw15 import config
+from homework_dir.lesson19_selenium2.hw15.driver import shared_driver
 from homework_dir.lesson19_selenium2.hw15.utils.driver_factory import driver_factory
+from homework_dir.lesson19_selenium2.hw15.utils.environment_data_collection import generate_environment_properties
+from homework_dir.lesson19_selenium2.hw15.utils.soft_step import ErrCatcher
 
-_driver_instance = None  # Global variable to keep track of the driver instance
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 @allure.title("Create, return a WebDriver instance based on the browser type and terminate at the end of each test.")
@@ -20,17 +24,18 @@ def driver(pytestconfig):
     Yields:
         webdriver: An instance of WebDriver initialized based on the specified browser and base URL.
     """
-    global _driver_instance
     browser = pytestconfig.getoption('browser')
     driver = driver_factory(browser)
     driver.maximize_window()
     driver.get(config.browser.base_url)
-    _driver_instance = driver
+    shared_driver.driver = driver
+    version = driver.capabilities['browserVersion']
+    generate_environment_properties(version)
 
     yield driver
 
     driver.quit()
-    _driver_instance = None
+    shared_driver.driver = None
 
 
 def pytest_addoption(parser):
@@ -61,11 +66,8 @@ def pytest_exception_interact(node, call, report):
         call (pytest.CallInfo): The test call information.
         report (pytest.TestReport): The test report generated after the test run.
     """
-    global _driver_instance
-    if _driver_instance:
+    if shared_driver.driver:
         try:
-            screenshot = _driver_instance.get_screenshot_as_png()
-
             test_name = node.name
             test_location = f"File: {node.fspath}, Line: {node.location[1]}, Function: {node.location[2]}"
             failure_reason = report.longreprtext
@@ -75,23 +77,20 @@ def pytest_exception_interact(node, call, report):
             exception_value = str(exception_info.value) if exception_info else 'No exception value'
 
             allure.attach(
-                screenshot,
+                f"Exception type: {exception_type}\n"
+                f"Exception value: {exception_value}"
+                f"Location: {test_location}\n"
+                f"Failure reason: {failure_reason}\n",
                 name=(
-                    f"Screenshot for {test_name} due to found {exception_type}: {exception_value}"
+                    f"Details for {test_name}"
                 ),
-                attachment_type=allure.attachment_type.PNG
-            )
-
-            allure.attach(
-                test_location,
-                name='Location',
                 attachment_type=allure.attachment_type.TEXT
             )
 
-            allure.attach(
-                failure_reason,
-                name=f'Failure reason',
-                attachment_type=allure.attachment_type.TEXT
-            )
         except Exception as e:
             print(f"Error capturing screenshot: {e}")
+
+
+@pytest.fixture(name='catcher')
+def assertion_catcher():
+    return ErrCatcher()
