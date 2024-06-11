@@ -1,0 +1,2 @@
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:47 Waiting until condition is met for locator: ('xpath', '//a[@href="https://1demoqa.com"]')
+ERROR    homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:76 Element ('xpath', '//a[@href="https://1demoqa.com"]') is not displayed.

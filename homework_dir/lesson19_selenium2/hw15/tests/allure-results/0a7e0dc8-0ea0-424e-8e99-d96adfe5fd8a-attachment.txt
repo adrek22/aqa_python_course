@@ -1,0 +1,2 @@
+2024-06-09 13:05:16,812 - INFO - Waiting until condition is met for locator: ('xpath', '//a[@href="https://1demoqa.com"]')
+2024-06-09 13:05:27,044 - ERROR - Element ('xpath', '//a[@href="https://1demoqa.com"]') is not displayed.

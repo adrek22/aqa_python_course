@@ -1,0 +1,165 @@
+INFO     root:environment_data_collection.py:76 Environment data saved to C:\Users\mmaznyk\PycharmProjects\aqa_python_course_personal\homework_dir\lesson19_selenium2\hw15\tests\allure-results\environment.properties
+INFO     root:test_practice_form.py:24 Page loaded: Home
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//a[@href="https://1demoqa.com"]')
+ERROR    homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:77 Element ('xpath', '//a[@href="https://1demoqa.com"]') is not displayed.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//img[@src="/images/1Toolsqa.jpg"]')
+ERROR    homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:77 Element ('xpath', '//img[@src="/images/1Toolsqa.jpg"]') is not displayed.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', "//*[text()='Forms']")
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', "//*[text()='Forms']") is displayed: True.
+CRITICAL homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:191 Assertion failed: Home url element should be visible on the page.
+CRITICAL homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:191 Assertion failed: Home button should be visible on the page.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Forms section button is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', "//*[text()='Forms']")
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="d30fe8de-0165-4f9d-a769-0510269c074a")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:94 Clicking on element ('xpath', "//*[text()='Forms']")
+INFO     root:test_practice_form.py:29 Page loaded: Forms
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', "//*[contains(text(), 'Please select an item from left to start practice.')]")
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', "//*[contains(text(), 'Please select an item from left to start practice.')]") is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//div[@class="header-text" and text()="Forms"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', '//div[@class="header-text" and text()="Forms"]') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//span[@class="text" and text()="Practice Form"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', '//span[@class="text" and text()="Practice Form"]') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('class name', 'element-group')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:141 Checking number of elements ('class name', 'element-group'), expected: 6, actual: 6
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Top text is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Forms option is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Practice form option button is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: There are 6 main items in left list.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:forms_page.py:61 Clicking to collapse the forms list.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//div[@class="header-text" and text()="Forms"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="21f3417e-ab0a-459e-ba27-4591f7a2e2c4")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:94 Clicking on element ('xpath', '//div[@class="header-text" and text()="Forms"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:54 Waiting until condition is not met for locator: ('xpath', '//span[@class="text" and text()="Practice Form"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:84 Element ('xpath', '//span[@class="text" and text()="Practice Form"]') is not displayed as expected.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Practice form option is not visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:forms_page.py:67 Clicking to expand the forms list.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//div[@class="header-text" and text()="Forms"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="21f3417e-ab0a-459e-ba27-4591f7a2e2c4")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:94 Clicking on element ('xpath', '//div[@class="header-text" and text()="Forms"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//span[@class="text" and text()="Practice Form"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', '//span[@class="text" and text()="Practice Form"]') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Practice form option is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//span[@class="text" and text()="Practice Form"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="c727ea04-15cf-4f6e-9db2-e1b7553342a3")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:94 Clicking on element ('xpath', '//span[@class="text" and text()="Practice Form"]')
+INFO     root:test_practice_form.py:34 Page loaded: Practice Form
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:114 Getting CSS property 'background-color' of element ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:practice_form_page.py:158 Color before hover: rgb(0, 123, 255)
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="46969230-098a-4349-ba0d-a75936db0756")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:108 Mouse is hovered over the element ('id', 'submit'). Wait 0.1 sec
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:114 Getting CSS property 'background-color' of element ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:practice_form_page.py:161 Color after hover: rgb(0, 108, 223)
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//h1[@class="text-center"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', '//h1[@class="text-center"]') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', "//*[contains(text(), 'Student Registration Form')]")
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', "//*[contains(text(), 'Student Registration Form')]") is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'userName-label')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('id', 'userName-label') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//div[@id="genterWrapper"]/div[1]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', '//div[@id="genterWrapper"]/div[1]') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'userNumber-label')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('id', 'userNumber-label') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('id', 'submit') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'userName-label')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="f9353f9d-8338-4ee6-afca-c6512bdef510")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:133 Checking text of element ('id', 'userName-label'), expected: Name, actual: Name
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//div[@id="genterWrapper"]/div[1]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="650f1cbe-618b-48bd-9c2d-517aba9d9d19")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:133 Checking text of element ('xpath', '//div[@id="genterWrapper"]/div[1]'), expected: Gender, actual: Gender
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'userNumber-label')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="2e993405-53bd-4390-bde4-f4b005432038")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:133 Checking text of element ('id', 'userNumber-label'), expected: Mobile(10 Digits), actual: Mobile(10 Digits)
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="46969230-098a-4349-ba0d-a75936db0756")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:133 Checking text of element ('id', 'submit'), expected: Submit, actual: Submit
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'firstName')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="ca05911e-fcf4-47d3-b0c6-c1ea7db2ea62")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:148 Checking attribute 'placeholder' of element ('id', 'firstName'), expected: First Name, actual: First Name
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'lastName')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="e410fb69-3c48-4b76-ad82-716cbd2c1c15")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:148 Checking attribute 'placeholder' of element ('id', 'lastName'), expected: Last Name, actual: Last Name
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'userNumber')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="30c551a4-e63e-4434-96a8-e99630492525")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:148 Checking attribute 'placeholder' of element ('id', 'userNumber'), expected: Mobile Number, actual: Mobile Number
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Submit button color is changed from rgb(0, 123, 255) to rgb(0, 108, 223)
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Header text is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Form title is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Name label is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Gender label is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Mobile number label is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Submit button is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Name label text matches expected
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Gender label text matches expected
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Mobile number label text matches expected
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Submit button text matches expected
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: First Name placeholder text matches expected
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Last Name placeholder text matches expected
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Mobile Number placeholder text matches expected
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'firstName')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="ca05911e-fcf4-47d3-b0c6-c1ea7db2ea62")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:101 Typing to element ('id', 'firstName') the text: Emma
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'lastName')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="e410fb69-3c48-4b76-ad82-716cbd2c1c15")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:101 Typing to element ('id', 'lastName') the text: Davis
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//label[@for="gender-radio-2"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="67ed4c24-4a8d-4fee-92d5-1e42362b65f1")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:94 Clicking on element ('xpath', '//label[@for="gender-radio-2"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'userNumber')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="30c551a4-e63e-4434-96a8-e99630492525")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:101 Typing to element ('id', 'userNumber') the text: 5678901234
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="46969230-098a-4349-ba0d-a75936db0756")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:94 Clicking on element ('id', 'submit')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//div[@role="dialog"]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('xpath', '//div[@role="dialog"]') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'example-modal-sizes-title-lg')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('id', 'example-modal-sizes-title-lg') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('css selector', '.table.table-dark.table-striped.table-bordered.table-hover')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('css selector', '.table.table-dark.table-striped.table-bordered.table-hover') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'closeLargeModal')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:74 Element ('id', 'closeLargeModal') is displayed: True.
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[1]/td[1]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="d3e3b300-66b5-4816-b654-67b7ff83067a")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:133 Checking text of element ('xpath', '//tbody/tr[1]/td[1]'), expected: Student Name, actual: Student Name
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[3]/td[1]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="e433ba44-6f26-46db-adc1-ac9d4706f9c2")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:133 Checking text of element ('xpath', '//tbody/tr[3]/td[1]'), expected: Gender, actual: Gender
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[4]/td[1]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="4e7d7a4e-0bb3-4e20-87f2-e1d2d877dadc")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:133 Checking text of element ('xpath', '//tbody/tr[4]/td[1]'), expected: Mobile, actual: Mobile
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[1]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="a95c8907-5c43-4149-a047-5dc3ca08555f")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:120 Getting attribute 'textContent' of element ('xpath', '//tbody/tr[1]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[1]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="a95c8907-5c43-4149-a047-5dc3ca08555f")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:120 Getting attribute 'textContent' of element ('xpath', '//tbody/tr[1]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[3]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="c1a1d4c0-4f3d-49df-8443-0ef3333a9d51")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:120 Getting attribute 'textContent' of element ('xpath', '//tbody/tr[3]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[3]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="c1a1d4c0-4f3d-49df-8443-0ef3333a9d51")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:120 Getting attribute 'textContent' of element ('xpath', '//tbody/tr[3]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[4]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="a8407161-cd26-4914-aa45-b0a084e7069e")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:120 Getting attribute 'textContent' of element ('xpath', '//tbody/tr[4]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('xpath', '//tbody/tr[4]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="a8407161-cd26-4914-aa45-b0a084e7069e")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:120 Getting attribute 'textContent' of element ('xpath', '//tbody/tr[4]/td[2]')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:practice_form_page.py:217 Summary dialog is opened
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Header text is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Form title is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Name label is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Gender label is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Mobile number label is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Submit button is visible
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Name label text matches expected
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Gender label text matches expected: Emma Davis
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Mobile number label text matches expected: Female
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:193 Assertion passed: Submit button text matches expected: 5678901234
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:48 Waiting until condition is met for locator: ('id', 'closeLargeModal')
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:60 Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="112f0fb8-8a07-49eb-82fe-baade5445735", element="c2350409-67d2-4f54-bdfa-57e8cb524041")>
+INFO     homework_dir.lesson19_selenium2.hw15.pages.base_page:base_page.py:94 Clicking on element ('id', 'closeLargeModal')

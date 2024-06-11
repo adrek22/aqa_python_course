@@ -1,0 +1,164 @@
+2024-06-09 18:47:13,385 - INFO - Page loaded: Home
+2024-06-09 18:47:13,386 - INFO - Waiting until condition is met for locator: ('xpath', '//a[@href="https://1demoqa.com"]')
+2024-06-09 18:47:23,629 - ERROR - Element ('xpath', '//a[@href="https://1demoqa.com"]') is not displayed.
+2024-06-09 18:47:23,629 - INFO - Waiting until condition is met for locator: ('xpath', '//img[@src="/images/1Toolsqa.jpg"]')
+2024-06-09 18:47:33,749 - ERROR - Element ('xpath', '//img[@src="/images/1Toolsqa.jpg"]') is not displayed.
+2024-06-09 18:47:33,749 - INFO - Waiting until condition is met for locator: ('xpath', "//*[text()='Forms']")
+2024-06-09 18:47:33,788 - INFO - Element ('xpath', "//*[text()='Forms']") is displayed: True.
+2024-06-09 18:47:33,873 - CRITICAL - Assertion failed: Home url element should be visible on the page.
+2024-06-09 18:47:34,023 - CRITICAL - Assertion failed: Home button should be visible on the page.
+2024-06-09 18:47:34,023 - INFO - Assertion passed: Forms section button is visible
+2024-06-09 18:47:34,023 - INFO - Waiting until condition is met for locator: ('xpath', "//*[text()='Forms']")
+2024-06-09 18:47:34,076 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="448d9647-1d2e-4874-8792-186870beb9e3")>
+2024-06-09 18:47:34,085 - INFO - Clicking on element ('xpath', "//*[text()='Forms']")
+2024-06-09 18:47:34,353 - INFO - Page loaded: Forms
+2024-06-09 18:47:34,353 - INFO - Waiting until condition is met for locator: ('xpath', "//*[contains(text(), 'Please select an item from left to start practice.')]")
+2024-06-09 18:47:34,388 - INFO - Element ('xpath', "//*[contains(text(), 'Please select an item from left to start practice.')]") is displayed: True.
+2024-06-09 18:47:34,398 - INFO - Waiting until condition is met for locator: ('xpath', '//div[@class="header-text" and text()="Forms"]')
+2024-06-09 18:47:34,423 - INFO - Element ('xpath', '//div[@class="header-text" and text()="Forms"]') is displayed: True.
+2024-06-09 18:47:34,433 - INFO - Waiting until condition is met for locator: ('xpath', '//span[@class="text" and text()="Practice Form"]')
+2024-06-09 18:47:34,457 - INFO - Element ('xpath', '//span[@class="text" and text()="Practice Form"]') is displayed: True.
+2024-06-09 18:47:34,473 - INFO - Waiting until condition is met for locator: ('class name', 'element-group')
+2024-06-09 18:47:34,487 - INFO - Checking number of elements ('class name', 'element-group'), expected: 6, actual: 6
+2024-06-09 18:47:34,487 - INFO - Assertion passed: Top text is visible
+2024-06-09 18:47:34,487 - INFO - Assertion passed: Forms option is visible
+2024-06-09 18:47:34,487 - INFO - Assertion passed: Practice form option button is visible
+2024-06-09 18:47:34,487 - INFO - Assertion passed: There are 6 main items in left list.
+2024-06-09 18:47:34,487 - INFO - Clicking to collapse the forms list.
+2024-06-09 18:47:34,487 - INFO - Waiting until condition is met for locator: ('xpath', '//div[@class="header-text" and text()="Forms"]')
+2024-06-09 18:47:34,526 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="857b61db-cc52-4f4e-9945-35b14b151ad5")>
+2024-06-09 18:47:34,540 - INFO - Clicking on element ('xpath', '//div[@class="header-text" and text()="Forms"]')
+2024-06-09 18:47:34,786 - INFO - Waiting until condition is not met for locator: ('xpath', '//span[@class="text" and text()="Practice Form"]')
+2024-06-09 18:47:34,806 - INFO - Element ('xpath', '//span[@class="text" and text()="Practice Form"]') is not displayed as expected.
+2024-06-09 18:47:34,806 - INFO - Assertion passed: Practice form option is not visible
+2024-06-09 18:47:34,806 - INFO - Clicking to expand the forms list.
+2024-06-09 18:47:34,806 - INFO - Waiting until condition is met for locator: ('xpath', '//div[@class="header-text" and text()="Forms"]')
+2024-06-09 18:47:34,834 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="857b61db-cc52-4f4e-9945-35b14b151ad5")>
+2024-06-09 18:47:34,841 - INFO - Clicking on element ('xpath', '//div[@class="header-text" and text()="Forms"]')
+2024-06-09 18:47:35,072 - INFO - Waiting until condition is met for locator: ('xpath', '//span[@class="text" and text()="Practice Form"]')
+2024-06-09 18:47:35,095 - INFO - Element ('xpath', '//span[@class="text" and text()="Practice Form"]') is displayed: True.
+2024-06-09 18:47:35,105 - INFO - Assertion passed: Practice form option is visible
+2024-06-09 18:47:35,105 - INFO - Waiting until condition is met for locator: ('xpath', '//span[@class="text" and text()="Practice Form"]')
+2024-06-09 18:47:35,161 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="fd7ae3cd-d3c0-47bc-a997-2ff7a6b84a92")>
+2024-06-09 18:47:35,167 - INFO - Clicking on element ('xpath', '//span[@class="text" and text()="Practice Form"]')
+2024-06-09 18:47:35,467 - INFO - Page loaded: Practice Form
+2024-06-09 18:47:35,468 - INFO - Waiting until condition is met for locator: ('id', 'submit')
+2024-06-09 18:47:35,472 - INFO - Getting CSS property 'background-color' of element ('id', 'submit')
+2024-06-09 18:47:35,477 - INFO - Color before hover: rgb(0, 123, 255)
+2024-06-09 18:47:35,477 - INFO - Waiting until condition is met for locator: ('id', 'submit')
+2024-06-09 18:47:35,492 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="76b876da-07f6-4589-b47b-5a33e19fac1c")>
+2024-06-09 18:47:35,770 - INFO - Mouse is hovered over the element ('id', 'submit'). Wait 0.1 sec
+2024-06-09 18:47:35,871 - INFO - Waiting until condition is met for locator: ('id', 'submit')
+2024-06-09 18:47:35,879 - INFO - Getting CSS property 'background-color' of element ('id', 'submit')
+2024-06-09 18:47:35,885 - INFO - Color after hover: rgb(0, 108, 223)
+2024-06-09 18:47:35,885 - INFO - Waiting until condition is met for locator: ('xpath', '//h1[@class="text-center"]')
+2024-06-09 18:47:35,924 - INFO - Element ('xpath', '//h1[@class="text-center"]') is displayed: True.
+2024-06-09 18:47:35,936 - INFO - Waiting until condition is met for locator: ('xpath', "//*[contains(text(), 'Student Registration Form')]")
+2024-06-09 18:47:35,967 - INFO - Element ('xpath', "//*[contains(text(), 'Student Registration Form')]") is displayed: True.
+2024-06-09 18:47:35,979 - INFO - Waiting until condition is met for locator: ('id', 'userName-label')
+2024-06-09 18:47:36,004 - INFO - Element ('id', 'userName-label') is displayed: True.
+2024-06-09 18:47:36,012 - INFO - Waiting until condition is met for locator: ('xpath', '//div[@id="genterWrapper"]/div[1]')
+2024-06-09 18:47:36,033 - INFO - Element ('xpath', '//div[@id="genterWrapper"]/div[1]') is displayed: True.
+2024-06-09 18:47:36,045 - INFO - Waiting until condition is met for locator: ('id', 'userNumber-label')
+2024-06-09 18:47:36,077 - INFO - Element ('id', 'userNumber-label') is displayed: True.
+2024-06-09 18:47:36,095 - INFO - Waiting until condition is met for locator: ('id', 'submit')
+2024-06-09 18:47:36,135 - INFO - Element ('id', 'submit') is displayed: True.
+2024-06-09 18:47:36,149 - INFO - Waiting until condition is met for locator: ('id', 'userName-label')
+2024-06-09 18:47:36,164 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="8e8ef7c3-7a32-4440-8e22-dfb47487050a")>
+2024-06-09 18:47:36,184 - INFO - Checking text of element ('id', 'userName-label'), expected: Name, actual: Name
+2024-06-09 18:47:36,185 - INFO - Waiting until condition is met for locator: ('xpath', '//div[@id="genterWrapper"]/div[1]')
+2024-06-09 18:47:36,210 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="b6ffcb21-e4a5-4742-90b9-bffba634f96c")>
+2024-06-09 18:47:36,230 - INFO - Checking text of element ('xpath', '//div[@id="genterWrapper"]/div[1]'), expected: Gender, actual: Gender
+2024-06-09 18:47:36,230 - INFO - Waiting until condition is met for locator: ('id', 'userNumber-label')
+2024-06-09 18:47:36,251 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="20fcb9b3-11cf-48e4-aa2a-1909c0a96911")>
+2024-06-09 18:47:36,260 - INFO - Checking text of element ('id', 'userNumber-label'), expected: Mobile(10 Digits), actual: Mobile(10 Digits)
+2024-06-09 18:47:36,260 - INFO - Waiting until condition is met for locator: ('id', 'submit')
+2024-06-09 18:47:36,276 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="76b876da-07f6-4589-b47b-5a33e19fac1c")>
+2024-06-09 18:47:36,290 - INFO - Checking text of element ('id', 'submit'), expected: Submit, actual: Submit
+2024-06-09 18:47:36,291 - INFO - Waiting until condition is met for locator: ('id', 'firstName')
+2024-06-09 18:47:36,307 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="4874cfc2-85a2-4c30-a833-c608429ca274")>
+2024-06-09 18:47:36,324 - INFO - Checking attribute 'placeholder' of element ('id', 'firstName'), expected: First Name, actual: First Name
+2024-06-09 18:47:36,324 - INFO - Waiting until condition is met for locator: ('id', 'lastName')
+2024-06-09 18:47:36,339 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="38b34465-895f-4aae-be2b-17fc2d2f5d27")>
+2024-06-09 18:47:36,360 - INFO - Checking attribute 'placeholder' of element ('id', 'lastName'), expected: Last Name, actual: Last Name
+2024-06-09 18:47:36,360 - INFO - Waiting until condition is met for locator: ('id', 'userNumber')
+2024-06-09 18:47:36,379 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="59a74795-0bb5-45e2-8747-646531c2678d")>
+2024-06-09 18:47:36,396 - INFO - Checking attribute 'placeholder' of element ('id', 'userNumber'), expected: Mobile Number, actual: Mobile Number
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Submit button color is changed from rgb(0, 123, 255) to rgb(0, 108, 223)
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Header text is visible
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Form title is visible
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Name label is visible
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Gender label is visible
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Mobile number label is visible
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Submit button is visible
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Name label text matches expected
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Gender label text matches expected
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Mobile number label text matches expected
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Submit button text matches expected
+2024-06-09 18:47:36,396 - INFO - Assertion passed: First Name placeholder text matches expected
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Last Name placeholder text matches expected
+2024-06-09 18:47:36,396 - INFO - Assertion passed: Mobile Number placeholder text matches expected
+2024-06-09 18:47:36,396 - INFO - Waiting until condition is met for locator: ('id', 'firstName')
+2024-06-09 18:47:36,414 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="4874cfc2-85a2-4c30-a833-c608429ca274")>
+2024-06-09 18:47:36,545 - INFO - Typing to element ('id', 'firstName') the text: Ethan
+2024-06-09 18:47:36,582 - INFO - Waiting until condition is met for locator: ('id', 'lastName')
+2024-06-09 18:47:36,613 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="38b34465-895f-4aae-be2b-17fc2d2f5d27")>
+2024-06-09 18:47:36,666 - INFO - Typing to element ('id', 'lastName') the text: Anderson
+2024-06-09 18:47:36,697 - INFO - Waiting until condition is met for locator: ('xpath', '//label[@for="gender-radio-3"]')
+2024-06-09 18:47:36,724 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="6e4066cd-a76f-4c74-b1de-54f04fc6cb39")>
+2024-06-09 18:47:36,735 - INFO - Clicking on element ('xpath', '//label[@for="gender-radio-3"]')
+2024-06-09 18:47:37,013 - INFO - Waiting until condition is met for locator: ('id', 'userNumber')
+2024-06-09 18:47:37,044 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="59a74795-0bb5-45e2-8747-646531c2678d")>
+2024-06-09 18:47:37,088 - INFO - Typing to element ('id', 'userNumber') the text: 9012345678
+2024-06-09 18:47:37,137 - INFO - Waiting until condition is met for locator: ('id', 'submit')
+2024-06-09 18:47:37,169 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="76b876da-07f6-4589-b47b-5a33e19fac1c")>
+2024-06-09 18:47:37,180 - INFO - Clicking on element ('id', 'submit')
+2024-06-09 18:47:37,461 - INFO - Waiting until condition is met for locator: ('xpath', '//div[@role="dialog"]')
+2024-06-09 18:47:37,541 - INFO - Element ('xpath', '//div[@role="dialog"]') is displayed: True.
+2024-06-09 18:47:37,583 - INFO - Waiting until condition is met for locator: ('id', 'example-modal-sizes-title-lg')
+2024-06-09 18:47:37,624 - INFO - Element ('id', 'example-modal-sizes-title-lg') is displayed: True.
+2024-06-09 18:47:37,652 - INFO - Waiting until condition is met for locator: ('css selector', '.table.table-dark.table-striped.table-bordered.table-hover')
+2024-06-09 18:47:37,695 - INFO - Element ('css selector', '.table.table-dark.table-striped.table-bordered.table-hover') is displayed: True.
+2024-06-09 18:47:37,709 - INFO - Waiting until condition is met for locator: ('id', 'closeLargeModal')
+2024-06-09 18:47:37,736 - INFO - Element ('id', 'closeLargeModal') is displayed: True.
+2024-06-09 18:47:37,761 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[1]/td[1]')
+2024-06-09 18:47:37,792 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="8522efd9-bef0-48bf-982d-a030c1781882")>
+2024-06-09 18:47:37,808 - INFO - Checking text of element ('xpath', '//tbody/tr[1]/td[1]'), expected: Student Name, actual: Student Name
+2024-06-09 18:47:37,808 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[3]/td[1]')
+2024-06-09 18:47:37,825 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="cc8807b7-2ed6-46b5-ab0b-85875791885d")>
+2024-06-09 18:47:37,841 - INFO - Checking text of element ('xpath', '//tbody/tr[3]/td[1]'), expected: Gender, actual: Gender
+2024-06-09 18:47:37,841 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[4]/td[1]')
+2024-06-09 18:47:37,864 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="32c1f939-7307-4a13-9500-0bcf11f9a547")>
+2024-06-09 18:47:37,876 - INFO - Checking text of element ('xpath', '//tbody/tr[4]/td[1]'), expected: Mobile, actual: Mobile
+2024-06-09 18:47:37,876 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[1]/td[2]')
+2024-06-09 18:47:37,894 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="ca0af3b1-6b9d-46f4-90c1-bd520c66d8eb")>
+2024-06-09 18:47:37,910 - INFO - Getting attribute 'textContent' of element ('xpath', '//tbody/tr[1]/td[2]')
+2024-06-09 18:47:37,919 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[1]/td[2]')
+2024-06-09 18:47:37,934 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="ca0af3b1-6b9d-46f4-90c1-bd520c66d8eb")>
+2024-06-09 18:47:37,938 - INFO - Getting attribute 'textContent' of element ('xpath', '//tbody/tr[1]/td[2]')
+2024-06-09 18:47:37,945 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[3]/td[2]')
+2024-06-09 18:47:37,958 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="bf75b8ec-5eaa-4028-9dfd-b8bd5a6628cd")>
+2024-06-09 18:47:37,964 - INFO - Getting attribute 'textContent' of element ('xpath', '//tbody/tr[3]/td[2]')
+2024-06-09 18:47:37,973 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[3]/td[2]')
+2024-06-09 18:47:37,984 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="bf75b8ec-5eaa-4028-9dfd-b8bd5a6628cd")>
+2024-06-09 18:47:37,990 - INFO - Getting attribute 'textContent' of element ('xpath', '//tbody/tr[3]/td[2]')
+2024-06-09 18:47:37,998 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[4]/td[2]')
+2024-06-09 18:47:38,013 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="ccde2791-8a4f-4783-8399-0ef72999a847")>
+2024-06-09 18:47:38,017 - INFO - Getting attribute 'textContent' of element ('xpath', '//tbody/tr[4]/td[2]')
+2024-06-09 18:47:38,027 - INFO - Waiting until condition is met for locator: ('xpath', '//tbody/tr[4]/td[2]')
+2024-06-09 18:47:38,041 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="ccde2791-8a4f-4783-8399-0ef72999a847")>
+2024-06-09 18:47:38,046 - INFO - Getting attribute 'textContent' of element ('xpath', '//tbody/tr[4]/td[2]')
+2024-06-09 18:47:38,052 - INFO - Summary dialog is opened
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Header text is visible
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Form title is visible
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Name label is visible
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Gender label is visible
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Mobile number label is visible
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Submit button is visible
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Name label text matches expected
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Gender label text matches expected: Ethan Anderson
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Mobile number label text matches expected: Other
+2024-06-09 18:47:38,052 - INFO - Assertion passed: Submit button text matches expected: 9012345678
+2024-06-09 18:47:38,054 - INFO - Waiting until condition is met for locator: ('id', 'closeLargeModal')
+2024-06-09 18:47:38,071 - INFO - Scrolling into view element: <selenium.webdriver.remote.webelement.WebElement (session="fcc0b05c-691a-4be4-873e-690e0123f064", element="d044d5c9-ae3c-4cf5-a7a0-00b4f244a5fd")>
+2024-06-09 18:47:38,075 - INFO - Clicking on element ('id', 'closeLargeModal')
