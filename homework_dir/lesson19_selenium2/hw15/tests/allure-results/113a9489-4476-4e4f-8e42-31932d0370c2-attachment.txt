@@ -1,0 +1,50 @@
+Exception type: AssertionError
+Exception value: Encountered errors in form validation:
+Home url element should be visible on the page.
+Home button should be visible on the page.Location: File: C:\Users\mmaznyk\PycharmProjects\aqa_python_course_personal\homework_dir\lesson19_selenium2\hw15\tests\test_practice_form.py, Line: 11, Function: test_flow
+Failure reason: driver = <selenium.webdriver.firefox.webdriver.WebDriver (session="a7cc90b6-2369-47b9-99d8-609b4228ce49")>
+
+    @allure.title("Flow testing")
+    @allure.description("Verifies the flow from Home page to Practice Form page.")
+    @allure.tag("Home page", "Forms  page", "Practice Form page")
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.parent_suite("UI Tests")
+    @allure.suite("Demo website")
+    @allure.sub_suite("Practice Form page")
+    @allure.feature("Practice Form page testing")
+    def test_flow(driver):
+        """Verifies the flow."""
+        home_page, forms_page, practice_form_page = HomePageHandler(driver), FormsPageHandler(driver), PracticeFormPageHandler(driver)
+        """Verifies that the essential elements on the Home page are displayed."""
+        logging.info(f"Page loaded: {home_page.title}")
+        errors = home_page.assert_home_page()
+        home_page.open_forms_page()
+    
+        """Verifies the behavior and visibility of elements on the Forms page."""
+        logging.info(f"Page loaded: {forms_page.title}")
+        errors += forms_page.assert_forms_page()
+        forms_page.open_practice_form()
+    
+        """Validates various functionalities and display elements on the Practice Form page."""
+        logging.info(f"Page loaded: {practice_form_page.title}")
+        errors += practice_form_page.assert_practice_form()
+        file_path = os.path.join(os.path.dirname(__file__), 'test_data', 'test_data.csv')
+        random_row = select_random_data(file_path)
+        first_name = random_row['First Name']
+        last_name = random_row['Last Name']
+        gender = random_row['Gender']
+        mobile_number = random_row['Mobile Number']
+        practice_form_page.fill_out_form_and_submit(first_name=first_name, last_name=last_name, gender=gender,
+                                                    mobile=mobile_number)
+        errors += practice_form_page.assert_summary_dialog(student_name=first_name + ' ' + last_name,
+                                                           gender=gender.capitalize(), mobile=mobile_number)
+        practice_form_page.close_summary_dialog()
+    
+        if errors:
+            error_messages = "\n".join(errors)
+>           raise AssertionError(f"Encountered errors in form validation:\n{error_messages}")
+E           AssertionError: Encountered errors in form validation:
+E           Home url element should be visible on the page.
+E           Home button should be visible on the page.
+
+test_practice_form.py:50: AssertionError

@@ -1,0 +1,42 @@
+Exception type: FileNotFoundError
+Exception value: [Errno 2] No such file or directory: 'requirements.txt'Location: File: C:\Users\mmaznyk\PycharmProjects\aqa_python_course_personal\homework_dir\lesson19_selenium2\hw15\tests\test_practice_form.py, Line: 11, Function: test_flow
+Failure reason: pytestconfig = <_pytest.config.Config object at 0x0000016F38F76E10>
+
+    @allure.title("Create, return a WebDriver instance based on the browser type and terminate at the end of each test.")
+    @pytest.fixture(scope='function')
+    def driver(pytestconfig):
+        """
+        A fixture to create and return a WebDriver instance based on the browser type provided via command-line option.
+        It maximizes the window and navigates to the base URL specified in the configuration.
+        The WebDriver instance is terminated at the end of each test to ensure a clean session.
+    
+        Args:
+            pytestconfig (_pytest.config.Config): Pytest config object, automatically provided by pytest, used to access CLI options.
+    
+        Yields:
+            webdriver: An instance of WebDriver initialized based on the specified browser and base URL.
+        """
+        browser = pytestconfig.getoption('browser')
+        driver = driver_factory(browser)
+        driver.maximize_window()
+        driver.get(config.browser.base_url)
+        shared_driver.driver = driver
+        version = driver.capabilities['browserVersion']
+        config_file = read_config('homework_dir/lesson19_selenium2/hw15/config/config.env')
+>       generate_environment_properties(config_file, version)
+
+conftest.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\utils\environment_data_collection.py:52: in generate_environment_properties
+    tool_versions = parse_requirements()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file_path = 'requirements.txt'
+
+    def parse_requirements(file_path="requirements.txt") -> dict:
+        """Parses the requirements.txt file to extract tool versions."""
+        tool_versions = {}
+>       with open(file_path, 'r') as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: 'requirements.txt'
+
+..\utils\environment_data_collection.py:32: FileNotFoundError
