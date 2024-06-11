@@ -25,7 +25,7 @@ class DBManagerSQLite:
 
     def _delete_table(self):
         query = f'DROP TABLE IF EXISTS {self.table_name}'
-        self._execute_query(query, (), f'{self.table_name} DB table is created')
+        self._execute_query(query, (), f'{self.table_name} DB table is deleted')
 
     def add_data(self, columns: str, data: tuple):
         placeholders = ', '.join('?' * len(data))
